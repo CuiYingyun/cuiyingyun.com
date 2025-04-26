@@ -4,8 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cui Yingyun</title>
+    <style>
+        /* 移除默认边距并设置 html 和 body 高度为 100% */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* 防止在 iframe 之外出现滚动条 */
+        }
+
+        /* 设置 iframe 占据其容器 (body) 的全部空间 */
+        iframe {
+            display: block; /* 避免底部出现额外空间 */
+            width: 100%;
+            height: 100%;
+            border: none; /* 推荐使用 CSS border:none 替代 frameborder="0" */
+        }
+    </style>
 </head>
 <body>
-    <iframe src="https://cuiyingyun.notion.site/ebd/13cc445d79af80e0acdae4a396a5285a" width="100%" height="100%" frameborder="0" allowfullscreen />
+    <!-- 移除了 width, height, frameborder 属性，因为它们已由 CSS 控制 -->
+    <iframe src="https://cuiyingyun.notion.site/ebd/13cc445d79af80e0acdae4a396a5285a" allowfullscreen></iframe>
 </body>
 </html>
