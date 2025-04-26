@@ -5,25 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cui Yingyun</title>
     <style>
-        /* 移除默认边距并设置 html 和 body 高度为 100% */
+        /* Reset default styles and set base font - Light theme defaults */
         html, body {
             margin: 0;
             padding: 0;
-            height: 100%;
-            overflow: hidden; /* 防止在 iframe 之外出现滚动条 */
+            height: 100%; /* Crucial for flex layout to fill height */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            /* Default text color (for body, if needed) */
+            /* color: #333; */
+            /* Default background (for body, if needed, usually white is browser default) */
+            /* background-color: #fff; */
         }
 
-        /* 设置 iframe 占据其容器 (body) 的全部空间 */
+        /* Use Flexbox on the body to arrange header and iframe */
+        body {
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+        }
+
+        /* Header styles - Dark theme specific */
+        header {
+            padding: 12px 20px; /* Top/bottom and left/right padding */
+            background-color: #000000; /* Black background for header */
+            color: #e0e0e0; /* Light grey text color for readability on black */
+            border-bottom: 1px solid #333; /* Dark grey border */
+            text-align: center; /* Center align the text */
+            font-size: 0.9em; /* Slightly smaller text */
+            flex-shrink: 0; /* Prevent header from shrinking */
+        }
+
+        header span {
+            margin: 0 10px; /* Spacing around each info item */
+        }
+
+        /* Links inside the header */
+        header a {
+            color: #64b5f6; /* Light blue links for dark background */
+            text-decoration: none; /* No underlines by default */
+        }
+
+        header a:hover {
+            text-decoration: underline; /* Underline on hover for clarity */
+        }
+
+        /* Iframe styles */
         iframe {
-            display: block; /* 避免底部出现额外空间 */
-            width: 100%;
-            height: 100%;
-            border: none; /* 推荐使用 CSS border:none 替代 frameborder="0" */
+            flex-grow: 1; /* Allow iframe to take up all remaining vertical space */
+            border: none; /* Remove iframe border */
+            display: block; /* Ensure block display */
+            width: 100%; /* Full width */
+            /* Height is now controlled by flex-grow */
+            /* Optional: Explicitly set iframe background if needed before content loads */
+            /* background-color: #fff; */
         }
     </style>
 </head>
 <body>
-    <!-- 移除了 width, height, frameborder 属性，因为它们已由 CSS 控制 -->
+    <!-- Header Section (Now with Black Background) -->
+    <header>
+        <span>
+            Blog: <a href="https://cuiyingyun.notion.site/blog-13cc445d79af80e0acdae4a396a5285a" target="_blank" rel="noopener noreferrer">cuiyingyun.notion</a>
+        </span>
+        <span>|</span>
+        <span>
+            Email: <a href="mailto:mail@cuiyingyun.com">mail@cuiyingyun.com</a>
+        </span>
+        <span>|</span>
+        <span>
+            X: <a href="https://x.com/cuiyingyun" target="_blank" rel="noopener noreferrer">@cuiyingyun</a>
+        </span>
+    </header>
+
+    <!-- Iframe Section -->
     <iframe src="https://cuiyingyun.notion.site/ebd/13cc445d79af80e0acdae4a396a5285a" allowfullscreen></iframe>
+
 </body>
 </html>
